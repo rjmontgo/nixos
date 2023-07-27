@@ -6,6 +6,10 @@
 { pkgs, ... }:
 {
   imports = [
-    # ./hardware-configuration.nix
-  ]
+    ./hardware-configuration.nix
+    ../../modules/nixos/core-desktop.nix
+  ];
+
+  networking.hostName = "quetzalcoatl";
+
 }

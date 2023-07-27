@@ -16,6 +16,20 @@
 
   outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
+      "quetzalcoatl" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	modules = [
+          ./hosts/quetzalcoatl
+
+	  home-manager.nixosModules.home-manager
+	  {
+            home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+
+	    home-manager.users.rob = import ./home;
+	  }
+	];
+      };
       "nixd" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
