@@ -1,0 +1,7 @@
+dunst &
+
+/home/rob/.config/feh/fehbg &
+
+xkbcomp /home/rob/.config/X11/layout.xkb $DISPLAY &
+
+exec i3 

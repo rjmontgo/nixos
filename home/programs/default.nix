@@ -2,25 +2,34 @@
 
 {
   home.packages = with pkgs; [
-    # window manager
-    dwm
-    dwmblocks
+    _1password
+    _1password-gui
+    alacritty
+    dmenu
     dunst
-    libnotify
-
-    # shell
-    st
-    ripgrep
-
-    # apps
-    zathura
+    feh
+    gcc
+    gimp
+    google-chrome
     htop
-
-
-    #utils
-    zip
+    luakit
+    libnotify
+    neofetch
+    newsboat
+    picom
+    ripgrep
     unzip
+    slack
+    sxiv
+    tmux
+    zathura
+    zip
 
-
+    # nvim language servers 
+    nodePackages.svelte-language-server
+    nodePackages.typescript-language-server
+    nodePackages.prettier_d_slim
+    nodePackages.prettier
+    lua-language-server
   ];
 }

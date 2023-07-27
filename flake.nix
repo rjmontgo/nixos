@@ -16,10 +16,10 @@
 
   outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      "ip-172-31-89-94.ec2.internal" = nixpkgs.lib.nixosSystem {
+      "nixd" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/amazon
+          ./hosts/laptop
 
           # home manager setup
           home-manager.nixosModules.home-manager
