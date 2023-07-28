@@ -8,7 +8,7 @@
   home.file = {
     "syncdevices" = {
       source = ./scripts/syncdevices;
-      target = "~/.local/bin/syncdevices";
+      target = ".local/bin/syncdevices";
       executable = true;
     };
   };
