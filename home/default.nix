@@ -3,8 +3,9 @@
 
 {
   imports = [
-    ./programs
+    ./bin
     ./config
+    ./programs
   ];
 
   home = {
@@ -31,7 +32,6 @@
     '';
 
   };
-
 
   services.ssh-agent.enable = true;
 }
