@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # get files
-rsync -vrtu nixd:/home/rob/media /home/rob/media
-rsync -vrtu nixd:/home/rob/wiki /home/rob/wiki
+rsync -vrtu nixd:/home/rob/media/ /home/rob/media/
+rsync -vrtu nixd:/home/rob/wiki/ /home/rob/wiki/
 
 # put new files
-rsync -vrtu /home/rob/media nixd:/home/rob/media
-rsync -vrtu /home/rob/wiki nixd:/home/rob/wiki 
+rsync -vrtu /home/rob/media/ nixd:/home/rob/media/
+rsync -vrtu /home/rob/wiki/ nixd:/home/rob/wiki/
