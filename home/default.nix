@@ -28,11 +28,12 @@
     };
     initExtra = ''
       autoload -U colors && colors
-    '';
-    promptInit = ''
       export PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
     '';
-
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history"
+    }
   };
 
   services.ssh-agent.enable = true;
