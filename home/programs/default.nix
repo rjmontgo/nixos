@@ -15,6 +15,7 @@
     htop
     luakit
     libnotify
+    mpv
     neofetch
     newsboat
     picom

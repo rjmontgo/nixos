@@ -21,7 +21,7 @@ killrecording() {
 	kill -15 "$recpid"
 	rm -f /tmp/recordingpid
 	updateicon ""
-	pkill -RTMIN+9 "${STATUSBAR:-dwmblocks}"
+	# pkill -RTMIN+9 "${STATUSBAR:-dwmblocks}"
 	}
 
 screencast() { \
@@ -93,7 +93,7 @@ askrecording() { \
 
 asktoend() { \
 	response=$(printf "No\\nYes" | dmenu -i -p "Recording still active. End recording?") &&
-	[ "$response" = "Yes" ] &&  killrecording
+	[ "$response" = "Yes" ] && killrecording
 	}
 
 videoselected()
