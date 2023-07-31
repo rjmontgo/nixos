@@ -7,7 +7,7 @@
     alacritty
     dmenu
     dunst
-    ffmpeg
+    ffmpeg-full
     feh
     gcc
     gimp
