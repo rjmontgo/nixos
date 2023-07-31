@@ -12,6 +12,9 @@
     username = "rob";
     homeDirectory = "/home/rob";
     stateVersion = "23.05";
+    sessionVariables = {
+      DIRENV_LOG_FORMAT = "";
+    };
   };
 
   # home manager manages itself
@@ -34,6 +37,11 @@
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   services.ssh-agent.enable = true;

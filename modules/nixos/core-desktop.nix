@@ -57,11 +57,22 @@
     shell = pkgs.zsh;
   };
 
-  fonts.fonts = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-  ];
+  fonts = {
+    fonts = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      (nerdfonts.override { 
+        fonts = [ "FiraCode" ]; 
+      })
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "Comic Code" "Fira Code Nerd Font"];
+      };
+    };
+  };
 
   programs.zsh.enable = true;
 

@@ -12,4 +12,13 @@
       executable = true;
     };
   };
+
+
+  home.file = {
+    "dmenurecord" = {
+      source = ./scripts/dmenurecord;
+      target = ".local/bin/dmenurecord";
+      executable = true;
+    };
+  };
 }

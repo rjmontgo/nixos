@@ -7,6 +7,7 @@
     alacritty
     dmenu
     dunst
+    ffmpeg
     feh
     gcc
     gimp
@@ -20,6 +21,7 @@
     ripgrep
     unzip
     slack
+    slop
     sxiv
     tmux
     zathura
