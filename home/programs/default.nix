@@ -20,15 +20,16 @@
     newsboat
     picom
     ripgrep
-    unzip
     slack
     slop
     sxiv
     tmux
+    unzip
     zathura
     zip
 
     # nvim language servers 
+    omnisharp-roslyn # lol, c# gross
     nodePackages.svelte-language-server
     nodePackages.typescript-language-server
     nodePackages.prettier_d_slim
