@@ -53,7 +53,7 @@
   users.users.rob = {
     isNormalUser = true;
     description = "rob";
-    extraGroups = [ "wheel" "video" "docker" ];
+    extraGroups = [ "wheel" "video" "docker" "audio"];
     shell = pkgs.zsh;
   };
 
