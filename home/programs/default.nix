@@ -7,6 +7,7 @@
     alacritty
     dmenu
     dunst
+    emacs
     ffmpeg-full
     feh
     gcc
