@@ -1465,7 +1465,7 @@ xkb_symbols "pc+us+inet(evdev)" {
     key <DOWN> {         [            Down ] };
     key <PGDN> {         [            Next ] };
     key  <INS> {         [          Insert ] };
-    key <DELE> {         [             Tab ] };
+    key <DELE> {         [          Delete ] };
     key <MUTE> {         [   XF86AudioMute ] };
     key <VOL-> {         [ XF86AudioLowerVolume ] };
     key <VOL+> {         [ XF86AudioRaiseVolume ] };
