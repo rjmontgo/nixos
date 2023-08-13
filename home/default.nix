@@ -45,4 +45,5 @@
   };
 
   services.ssh-agent.enable = true;
+  services.picom.enable = true;
 }

@@ -19,7 +19,6 @@
     mpv
     neofetch
     newsboat
-    picom
     ripgrep
     slack
     slop
