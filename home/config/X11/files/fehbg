@@ -1,2 +1,2 @@
 #!/bin/sh
-/etc/profiles/per-user/rob/bin/feh --no-fehbg --bg-scale '/home/rob/Downloads/nixos.webp' 
+/etc/profiles/per-user/rob/bin/feh --no-fehbg --bg-scale '/home/rob/media/wallpapers/background.jpg' 

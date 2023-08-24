@@ -28,6 +28,7 @@
     };
     shellAliases = {
       tmux = "TERM=xterm-256color tmux";
+      e = "emacsclient -c";
     };
     initExtra = ''
       autoload -U colors && colors
@@ -44,6 +45,14 @@
     enableZshIntegration = true;
   };
 
+  programs.neovim.defaultEditor = true;
+
   services.ssh-agent.enable = true;
-  services.picom.enable = true;
+  # services.picom = {
+  #   enable = true;
+  #   vSync = true;
+  #   opacityRules = [
+  #     "50:class_g = 'Emacs' && focused"
+  #   ];
+  # };
 }

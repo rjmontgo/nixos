@@ -69,7 +69,7 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Comic Code" "Fira Code Nerd Font"];
+        monospace = [ "Fira Code Nerd Font" ];
       };
     };
   };

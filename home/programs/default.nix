@@ -7,7 +7,7 @@
     alacritty
     dmenu
     dunst
-    emacs
+    emacs29-gtk3    
     ffmpeg-full
     feh
     gcc
@@ -19,7 +19,10 @@
     mpv
     neofetch
     newsboat
+    picom
+    python311
     ripgrep
+    sc-im
     slack
     slop
     sxiv
@@ -35,5 +38,7 @@
     nodePackages.prettier_d_slim
     nodePackages.prettier
     lua-language-server
+    python311Packages.python-lsp-server
+    nixd
   ];
 }

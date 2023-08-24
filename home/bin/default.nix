@@ -21,4 +21,13 @@
       executable = true;
     };
   };
+
+
+  home.file = {
+    "changebackground" = {
+      source = ./scripts/changebackground;
+      target = ".local/bin/changebackground";
+      executable = true;
+    };
+  };
 }
