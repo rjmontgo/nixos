@@ -18,18 +18,19 @@
     nixosConfigurations = {
       "quetzalcoatl" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	modules = [
+        modules = [
           ./hosts/quetzalcoatl
 
-	  home-manager.nixosModules.home-manager
-	  {
+          home-manager.nixosModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
+            home-manager.useUserPackages = true;
 
-	    home-manager.users.rob = import ./home;
-	  }
-	];
+            home-manager.users.rob = import ./home;
+          }
+        ];
       };
+
       "nixd" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [

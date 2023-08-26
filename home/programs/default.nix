@@ -7,6 +7,7 @@
     alacritty
     dmenu
     dunst
+    eww-wayland
     emacs29-gtk3    
     ffmpeg-full
     feh
@@ -14,6 +15,8 @@
     gimp
     google-chrome
     htop
+    hyprpaper
+    jq
     luakit
     libnotify
     mpv
@@ -22,9 +25,11 @@
     picom
     python311
     ripgrep
+    wofi
     sc-im
     slack
     slop
+    socat
     sxiv
     tmux
     unzip
