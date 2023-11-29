@@ -83,7 +83,7 @@
     # $ darwin-rebuild build --flake .#mactop
     darwinConfigurations."mactop" = nix-darwin.lib.darwinSystem {
       modules = [
-        configuration
+        ./darwin.nix
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
