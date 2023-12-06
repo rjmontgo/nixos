@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, specialArgs, ... }: {
   home = {
-    username = "rob";
-    homeDirectory = "/Users/rob";
+    username = specialArgs.username;
+    homeDirectory = "/Users/${specialArgs.username}";
     stateVersion = "23.11";
   };
 

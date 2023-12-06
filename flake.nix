@@ -17,16 +17,29 @@
     darwinConfigurations."mactop" = nix-darwin.lib.darwinSystem {
       modules = [
         ./darwin.nix
+        ./hosts/mactop.nix
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users."rob" = import ./home.nix;
+          home-manager.extraSpecialArgs = { username = "rob"; };
         }
       ];
+
       specialArgs = { inherit inputs; };
     };
 
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."mactop".pkgs;
+    # work laptop
+    darwinConfigurations."bluecrew" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./darwin.nix
+        ./hosts/bluecrew.nix
+        home-manager.darwinModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."robert.montgomery" = import ./home.nix;
+        }
+      ];
+    };
   };
 }

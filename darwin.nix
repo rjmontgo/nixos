@@ -110,8 +110,4 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 
-  users.users."rob" = {
-    name = "rob";
-    home = "/Users/rob";
-  };
 }
