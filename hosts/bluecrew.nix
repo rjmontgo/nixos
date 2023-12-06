@@ -12,6 +12,5 @@ in {
   };
 
   services.nix-daemon.enable = true;
-  nixpkgs.hostPlatform = "aarch64-darwin";
   nix.settings.experimental-features = "nix-command flakes";
 }

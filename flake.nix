@@ -33,13 +33,7 @@
     darwinConfigurations."bluecrew" = nix-darwin.lib.darwinSystem {
       modules = [
         ./hosts/bluecrew.nix
-        # ./darwin.nix
-        # ./hosts/bluecrew.nix
-        # home-manager.darwinModules.home-manager {
-        #   home-manager.useGlobalPkgs = true;
-        #   home-manager.useUserPackages = true;
-        #   home-manager.users."robert.montgomery" = import ./home.nix;
-        # }
+        ./darwin.nix
       ];
       specialArgs = { inherit inputs; username = "rob"; };
     };

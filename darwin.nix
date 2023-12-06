@@ -12,7 +12,7 @@
   ## services config
   services.yabai = {
     enable = true;
-    enableScriptingAddition = true;
+    enableScriptingAddition = false;
     extraConfig = ''
       yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
       sudo yabai --load-sa
@@ -93,13 +93,8 @@
 
     casks = [
       # apps
-      "1password"
-      "emacs"
-      "google-chrome"
       "karabiner-elements"
-      "microsoft-teams"
-      "slack"
-      "ubersicht"
+      #"ubersicht"
 
       # other
       "font-fira-code-nerd-font"
