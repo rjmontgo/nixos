@@ -89,15 +89,21 @@
 
     brews = [
       "openssl"
+      "fnm"
     ];
 
     casks = [
       # apps
       "karabiner-elements"
-      #"ubersicht"
-
+      "ubersicht"
+      "docker"
+      
       # other
       "font-fira-code-nerd-font"
+
+      "mysqlworkbench"
+      "envkey"
+      "postman"
     ];
   };
 

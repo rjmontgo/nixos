@@ -16,8 +16,8 @@
     # $ darwin-rebuild build --flake .#mactop
     darwinConfigurations."mactop" = nix-darwin.lib.darwinSystem {
       modules = [
-        ./darwin.nix
         ./hosts/mactop.nix
+        ./darwin.nix
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -34,8 +34,14 @@
       modules = [
         ./hosts/bluecrew.nix
         ./darwin.nix
+        home-manager.darwinModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."robert.montgomery" = import ./bc-home.nix;
+          home-manager.extraSpecialArgs = { username = "robert.montgomery"; };
+        }
       ];
-      specialArgs = { inherit inputs; username = "rob"; };
+      specialArgs = { inherit inputs; username = "robert.montgomery"; };
     };
   };
 }

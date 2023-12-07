@@ -1,0 +1,26 @@
+* NixOS
+
+For work / personal computers I want to have the following folder
+structure the basic idea is that the home manager should be common
+across all systems contain xdg configs. Where as the system config
+should handle all packages be separate (manages
+homebrew/java/node/etc)
+
+can parameterize things to the home manager like username where
+needed.  Should be a set of modules that are 'opt-in' meaning that
+each home configuration can select from a set of modules where
+differences are needed.
+
+#+begin_src sh
+  ./flake.nix
+  ./flake.lock
+  ./home
+        /core.nix
+        /default.nix?
+        /config
+                /(yabai|zsh|skhd)/file
+  ./hosts
+        /bluecrew.nix
+        /mactop.nix
+
+#+end_src
