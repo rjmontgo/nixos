@@ -1,0 +1,14 @@
+#!/bin/sh
+maim --select -f png --nodrag | xclip -selection clipboard -t image/png
+# action="$1"
+# case $action in
+#     quickshot)
+
+#         ;;
+#     screenshot)
+#         maim --select 
+#         ;;
+
+#     screencap)
+#         captu
+

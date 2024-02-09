@@ -1,0 +1,16 @@
+#!/bin/sh
+
+find_project_dirs="$HOME/dev/bluecrew"
+project_dirs="$HOME/nixos $HOME/.config/nvim $HOME/dev/go"
+
+find_project_res=$(find $find_project_dirs -mindepth 1 -maxdepth 1 -type d)
+target=$(echo "$find_project_res $project_dirs" | tr " " "\n" | fzf)
+
+tmux has-session -t $target
+if [ $? != 0 ]
+then
+  tmux new-session -s $target -c $target
+fi
+tmux attach -t $target
+
+

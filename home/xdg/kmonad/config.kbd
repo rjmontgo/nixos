@@ -1,0 +1,69 @@
+#|
+(deflayer name
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+|#
+
+(defcfg
+ input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+ output (uinput-sink
+         "Laptop Keyboard"
+         "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/xset r rate 200 25")
+
+ fallthrough true)
+
+(defalias
+  ;; shift when held, paren when tapped
+  lpr (tap-hold-next 200 \( lsft)
+  rpr (tap-hold-next 200 \) rsft)
+
+  ;; control when held, escape when tapped
+  ces (tap-hold-next 200 esc lctl)
+  rct (tap-hold-next 200 ret rctl)
+
+  ;; home row mods
+  rg (tap-hold-next-release 400 ; rmet)
+  ra (tap-hold-next-release 400 l ralt)
+  rs (tap-hold-next-release 400 k rsft)
+  rc (tap-hold-next-release 400 j rctl)
+
+  lg (tap-hold-next-release 400 a lmet)
+  la (tap-hold-next-release 400 s ralt)
+  ls (tap-hold-next-release 400 d rsft)
+  lc (tap-hold-next-release 400 f lctl)
+
+  p/g (tap-hold-next-release 400 g (layer-toggle prog-syms))
+  p/h (tap-hold-next-release 400 h (layer-toggle prog-syms))
+)
+
+(deflayer base
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @ces @lg  @la  @ls  @lc  @p/g @p/h @rc  @rs  @ra  @rg  _    @rct
+  @lpr _    _    _    _    _    _    _    _    _    _    @rpr
+  _    _    _              _              _    _    rmet _
+)
+
+(deflayer prog-syms
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    [    \(   {    <    >    }    \)   ]    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+
+

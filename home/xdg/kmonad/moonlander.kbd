@@ -1,0 +1,75 @@
+#|
+(deflayer name
+  _    _    _    _    _    _    _              _    _    _    _    _    _    _
+  _    _    _    _    _    _    _              _    _    _    _    _    _    _
+  _    _    _    _    _    _    _              _    _    _    _    _    _    _
+  _    _    _    _    _    _                        _    _    _    _    _    _
+  _    _    _    _    _         _              _         _    _    _    _    _
+                           _    _    _    _    _    _
+)
+
+|#
+
+(defcfg
+ input (device-file "/dev/input/by-id/usb-ZSA_Technology_Labs_Moonlander_Mark_I-event-kbd")
+ output (uinput-sink
+         "MoonLander keyboard"
+         "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/xset r rate 200 25")
+
+ fallthrough true)
+
+(defalias
+  ;; shift when held, paren when tapped
+  lpr (tap-hold-next 200 \( lsft)
+  rpr (tap-hold-next 200 \) rsft)
+
+  ;; control when held, escape when tapped
+  ces (tap-hold-next 200 esc lctl)
+  rct (tap-hold-next 200 ret rctl)
+
+  ;; home row mods
+  G/s (tap-hold-next-release 400 ; rmet)
+  A/l (tap-hold-next-release 400 l ralt)
+  S/k (tap-hold-next-release 400 k rsft)
+  C/j (tap-hold-next-release 400 j rctl)
+
+  G/a (tap-hold-next-release 400 a lmet)
+  A/s (tap-hold-next-release 400 s lalt)
+  S/d (tap-hold-next-release 400 d lsft)
+  C/f (tap-hold-next-release 400 f lctl)
+
+  P/g (tap-hold-next-release 400 g (layer-toggle prog-syms))
+  P/h (tap-hold-next-release 400 h (layer-toggle prog-syms))
+
+)
+
+
+
+
+(deflayer name
+  _    _    _    _    _    _    _              _    _    _    _    _    _    _
+  _    _    _    _    _    _    _              _    _    _    _    _    _    _
+  esc  @G/a @A/s @S/d @C/f @P/g _              _    @P/h @C/j @S/k @A/l @G/s _
+  _    _    _    _    _    _                        _    _    _    _    _    _
+  _    _    _    _    _         _              _         _    _    _    _    _
+                           _    _    _    _    _    _
+)
+
+(deflayer prog-syms
+  _    _    _    _    _    _    _              _    _    _    _    _    _    _
+  _    _    [    \(   {    <    _              _    >    }    \)   ]    _    _
+  _    _    _    _    _    _    _              _    _    _    _    _    _    _
+  _    _    _    _    _    _                        _    _    _    _    _    _
+  _    _    _    _    _         _              _         _    _    _    _    _
+                           bspc tab  _    _    ret  spc
+)
+
+(defsrc
+  =    1    2    3    4    5    left           rght 6    7    8    9    0    -
+  del  q    w    e    r    t    home           pgup y    u    i    o    p    \
+  ins  a    s    d    f    g    end            pgdn h    j    k    l    ;    '
+  lsft z    x    c    v    b                        n    m    ,    .    /    rsft
+  grv  caps slck left rght      cmp            esc       up   down [    ]    rmet
+                           spc  bspc lmet lalt tab  ret
+)
+
