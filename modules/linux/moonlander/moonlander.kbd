@@ -52,7 +52,7 @@
   esc  @G/a @A/s @S/d @C/f @P/g _              _    @P/h @C/j @S/k @A/l @G/s _
   _    _    _    _    _    _                        _    _    _    _    _    _
   _    _    _    _    _         _              _         _    _    _    _    _
-                           _    _    _    _    _    _
+                           bspc tab  _    _    ret  spc
 )
 
 (deflayer prog-syms
@@ -61,7 +61,7 @@
   _    _    _    _    _    _    _              _    _    _    _    _    _    _
   _    _    _    _    _    _                        _    _    _    _    _    _
   _    _    _    _    _         _              _         _    _    _    _    _
-                           bspc tab  _    _    ret  spc
+                           _    _    _    _    _    _ 
 )
 
 (defsrc

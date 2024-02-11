@@ -7,6 +7,12 @@
 
   programs.home-manager.enable = true;
 
+  programs.git = {
+    enable = true;
+    userName = "Robert Montgomery";
+    userEmail = "robm4958@gmail.com";
+  };
+
   xdg.configFile."kmonad" = {
     source = ./xdg/kmonad/config.kbd;
     target = "kmonad/config.kbd";

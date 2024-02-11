@@ -13,19 +13,23 @@
       import ./overlays/dwm.nix
     ];
     
-    #nixpkgs.config = {
-    #  allowUnfree = true;
-    #  permittedInsecurePackages = [
-    #    "electron-25.9.0"
-    #  ];
-    #};
     nixosConfigurations.arbiter = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = inputs // {
         hostname = "arbiter";
         username = "rob";
       };
-      modules = [./hosts/arbiter];
+      modules = [
+	      ./hosts/arbiter
+  	    ./modules/linux/core-desktop.nix
+        ./modules/work/bluecrew.nix
+
+	      home-manager.nixosModules.home-manager {
+	        home-manager.useGlobalPkgs = true;
+	        home-manager.useUserPackages = true;
+	        home-manager.users.rob = import ./home;
+	      }
+      ];
     };
     
     nixosConfigurations.quetzal = nixpkgs.lib.nixosSystem {

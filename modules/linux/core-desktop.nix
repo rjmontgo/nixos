@@ -30,7 +30,7 @@ in
   #  ];
   #};
   nixpkgs.config.permittedInsecurePackages =
-    lib.optional (pkgs.obsidian.version == "1.4.16") "electron-25.9.0";
+    lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
   nixpkgs.config.allowUnfree = true;
   
   nix = {
@@ -128,7 +128,7 @@ in
     };
   };
 
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   
   environment.systemPackages = with pkgs; [
     
