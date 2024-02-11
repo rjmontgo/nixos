@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="input", ATTR{id/vendor}=="054c", ATTR{id/product}=="0cd3", RUN+="/bin/sh -c '/bin/bt-switch-headphones > /tmp/on-connect.log 2>&1'"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sleep 2
+
+sudo -u '#1000' XDG_RUNTIME_DIR=/run/user/1000 pactl set-card-profile bluez_card.CC_98_8B_D2_0D_71 handsfree_head_unit

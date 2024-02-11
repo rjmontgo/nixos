@@ -26,4 +26,8 @@
   home.file.".local/bin/tmux-sessionizer" = {
     source = ./xdg/bin/tmux-sessionizer;
   };
+
+  home.file.".local/bin/bt-switch-headphones" = {
+    source = ./xdg/bin/bt-switch-headphones;
+  };
 }

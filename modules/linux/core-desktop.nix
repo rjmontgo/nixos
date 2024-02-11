@@ -22,13 +22,6 @@ in
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # nix config
-  #nixpkgs.config = {
-  #  allowUnfree = true;
-  #  permittedInsecurePackages = [
-  #    "electron-20.9.0"
-  #  ];
-  #};
   nixpkgs.config.permittedInsecurePackages =
     lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
   nixpkgs.config.allowUnfree = true;
