@@ -166,6 +166,7 @@ in
     notmuch
     obsidian
     nodejs_21
+    surf
 
     lua-language-server
 

@@ -28,41 +28,31 @@
   rct (tap-hold-next 200 ret rctl)
 
   ;; home row mods
-  G/s (tap-hold-next-release 400 ; rmet)
-  A/l (tap-hold-next-release 400 l ralt)
-  S/k (tap-hold-next-release 400 k rsft)
-  C/j (tap-hold-next-release 400 j rctl)
 
-  G/a (tap-hold-next-release 400 a lmet)
-  A/s (tap-hold-next-release 400 s lalt)
-  S/d (tap-hold-next-release 400 d lsft)
-  C/f (tap-hold-next-release 400 f lctl)
-
-  P/g (tap-hold-next-release 400 g (layer-toggle prog-syms))
-  P/h (tap-hold-next-release 400 h (layer-toggle prog-syms))
+  sym (layer-toggle prog-syms)
 
 )
 
 
-(deflayer name
-  _    _    _    _    _    _                       _    _    _    _    _    _
-  _    _    _    _    _    _                       _    _    _    _    _    _
-  esc  @G/a @A/s @S/d @C/f @P/g                    @P/h @C/j @S/k @A/l @G/s _
-  _    _    _    _    _    _                       _    _    _    _    _    _
-       _    _    _    _                                 _    _    _    _
-                                _    _        _    _
+(deflayer base
+  _    _    _    _    _    _                            _    _    _    _    _    _
+  _    _    _    _    _    _                            _    _    _    _    _    _
+  esc  _    _    _    _    _                            _    _    _    _    _    _
+  _    _    _    _    _    _                            _    _    _    _    _    _
+       _    _    _    _                                      _    _    _    _
+                                @sym _        _    @ces 
                            _    _    _        _    _    _
                                      _        _
 )
 
 (deflayer prog-syms
   _    _    _    _    _    _                       _    _    _    _    _    _
-  _    _    [    \(   {    <                       >    }    \)   ]    _    _
-  _    _    _    _    _    _                       _    _    _    _    _    _
-  _    _    _    _    _    _                       _    _    _    _    _    _
+  _    !    @    #    $    %                       =    `    :    ;    +    _
+  _    lmet lalt lsft lctl ^                       *    \(   {    [    -    _
+  _    _    _    \    |    &                       ~    \)   }    ]    \_   _
        _    _    _    _                                 _    _    _    _    
                                 _    _        _    _
-                           _    _    _        _    _    _
+                           _    tab  _        _    _    _
                                      _        _
 )
 
@@ -74,6 +64,6 @@
   lsft z    x    c    v    b                       n    m    ,    .    /    rsft
        grv  ins  left rght                              up   down [    ]    
                                 lctl lalt     ralt rctl
-                           bspc tab  lmet     rmet ret  spc
+                           bspc del  lmet     rmet ret  spc
                                      lsft     rsft
 )

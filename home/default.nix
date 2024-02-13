@@ -11,6 +11,9 @@
     enable = true;
     userName = "Robert Montgomery";
     userEmail = "robm4958@gmail.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   xdg.configFile."kmonad" = {
