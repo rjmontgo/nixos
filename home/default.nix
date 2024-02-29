@@ -13,13 +13,14 @@
     userEmail = "robm4958@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
+
     };
   };
 
-  xdg.configFile."kmonad" = {
-    source = ./xdg/kmonad/config.kbd;
-    target = "kmonad/config.kbd";
-  };
+#  xdg.configFile."kmonad" = {
+#    source = ./xdg/kmonad/config.kbd;
+#    target = "kmonad/config.kbd";
+#  };
 
   # bin scripts
   home.file.".local/bin/capture" = {

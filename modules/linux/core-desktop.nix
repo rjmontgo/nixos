@@ -6,7 +6,6 @@ in
 {
   imports = [
     ./kmonad.nix
-    ./tmux.nix
   ];
   
   # sys config
@@ -120,6 +119,7 @@ in
       allow-emacs-pinentry = "";
     };
   };
+  programs.nix-ld.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
   
@@ -127,6 +127,7 @@ in
     
     # development
     alacritty
+    st
     bashmount
     docker
     docker-compose
@@ -157,7 +158,6 @@ in
     lispPackages.quicklisp
     firefox
     zathura
-    tmux
     fzf
     pulsemixer
     direnv
@@ -167,6 +167,11 @@ in
     obsidian
     nodejs_21
     surf
+    stow
+    lsof
+    fnm
+    tmux
+    github-cli
 
     lua-language-server
 
@@ -174,6 +179,7 @@ in
 
     google-chrome
     _1password-gui
+    R
     
     # non-top level
     haskellPackages.kmonad
